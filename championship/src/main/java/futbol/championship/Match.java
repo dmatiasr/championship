@@ -4,8 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import futbol.championship.models.Team;
 import futbol.championship.utilities.Pair;
-import models.Team;
 
 public class Match {
 	private List<Team> teams;
@@ -26,8 +26,9 @@ public class Match {
 		List<Pair<Team,Team>> matchs = new LinkedList<Pair<Team,Team>>();
 		if (teams.size() % 2 == 0  ){ //if pair
 			for (int i = 0; i < teams.size(); i++) {
+		
 				Pair p = new Pair();
-				
+			
 				Team t = this.randomizer(teams);
 				p.setFirst(t);
 				teams.remove(t);

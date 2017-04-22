@@ -1,4 +1,4 @@
-package models;
+package futbol.championship.models;
 
 import java.util.List;
 import java.util.UUID;
@@ -7,17 +7,13 @@ public class Team {
 	private String id;
 	private String name;
 	private List<Player> players;
-	private Zone zone;
-	private int maxPlayers;
 	public Team (){
 		
 	}
-	public Team(String n, List<Player> pl, Zone z, int maxs){
+	public Team(String n, List<Player> pl){
 		this.id = UUID.randomUUID().toString();
 		this.name= n;
 		this.players = pl;
-		this.zone=z;
-		this.maxPlayers=maxs;
 	}
 	
 	public String getId() {
@@ -38,15 +34,9 @@ public class Team {
 	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
-	public Zone getZone() {
-		return zone;
-	}
-	public void setZone(Zone zone) {
-		this.zone = zone;
-	}
+
 	@Override
 	public String toString() {
-		return "Team [id=" + id + ", name=" + name + ", players=" + players
-				+ ", zone=" + zone + "]";
+		return "Team name=" + name + ", players=" + players;
 	}
 }

@@ -1,7 +1,10 @@
-package models;
+package futbol.championship.models;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
+
+import futbol.championship.utilities.Pair;
 
 public class Tournament {
 	private String id;
@@ -37,10 +40,28 @@ public class Tournament {
 	public void setZones(List<Zone> zones) {
 		this.zones = zones;
 	}
+	/**
+	 * 
+	 * @return List of List for zone of team vs teams.
+	 */
+	public List< List <Pair <Team, Team>> > generateTournt(){
+		
+		List< List <Pair <Team, Team>> > tourn = new LinkedList <List <Pair <Team, Team> > >();
+		for (int i = 0; i < zones.size(); i++) {
+		 tourn.add( zones.get(i).generateMatchs());
+		}
+		
+		return tourn;
+	}
+	
+	
+
+	
+	
 
 	@Override
 	public String toString() {
-		return "Tournament [id=" + id + ", name=" + name + ", zones=" + zones
+		return "Tournament [name=" + name + ", zones=" + zones
 				+ "]";
 	}
 	

@@ -27,7 +27,7 @@ public class Pair<T,E> {
 	}
 	@Override
 	public String toString() {
-		return "Pair [first=" + first + ", snd=" + snd + "]";
+		return " ENCUENTRO: [" + first + "-- VS --" + snd + "]";
 	}
 	
 	
